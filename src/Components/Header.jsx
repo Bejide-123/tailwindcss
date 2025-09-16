@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
@@ -9,14 +10,52 @@ const Header = () => {
       id="Header"
     >
       <Navbar />
-      <div className="flex-1 flex flex-col justify-center items-center px-8 py-16">
-        <h2 className="text-4xl font-bold mb-4 text-white text-center sm:text-6xl md:text-[82px] inline-block max-w-3xl pt-10">
+
+      <motion.div
+        className="flex-1 flex flex-col justify-center items-center px-8 py-16 text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, y: 50 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.8,
+              ease: "easeOut",
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+      >
+        <motion.h2
+          className="text-4xl font-bold mb-4 text-white sm:text-6xl md:text-[82px] max-w-3xl pt-10"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
           Explore Homes that fit your dreams
-        </h2>
-        <p className="mb-8 text-2xl text-white text-center">
+        </motion.h2>
+
+        <motion.p
+          className="mb-8 text-2xl text-white"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
           Find your perfect home with our expert real estate services.
-        </p>
-        <div className="flex gap-6">
+        </motion.p>
+
+        <motion.div
+          className="flex gap-6"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
           <a
             href="#Projects"
             className="px-8 py-3 bg-transparent rounded-full border-2 border-purple-500 text-white text-lg font-semibold hover:backdrop-blur-[2px]"
@@ -26,12 +65,12 @@ const Header = () => {
           <a
             href="#Contact"
             className="px-8 py-3 bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 
-             hover:opacity-90 transition text-white rounded-full text-lg font-semibold"
+       hover:opacity-90 transition text-white rounded-full text-lg font-semibold"
           >
             Contact Us
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

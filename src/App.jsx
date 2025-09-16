@@ -6,16 +6,32 @@ import Projects from './Components/Projects'
 import Testimonial from './Components/Testimonial'
 import Contact from './Components/Contact'
 import Footer from './Components/Footer'
+import FadeInSection from './Components/FadeInSection';
 
 const App = () => {
   return (
     <div className='w-full overflow-hidden'>
       <Header />
-      <About />
-      <Projects />
-      <Testimonial />
-      <Contact />
-      <Footer />
+
+      <FadeInSection>
+        <About />
+      </FadeInSection>
+
+      <FadeInSection>
+        <Projects />
+      </FadeInSection>
+
+      <FadeInSection>
+        <Testimonial />
+      </FadeInSection>
+
+      <FadeInSection>
+        <Contact />
+      </FadeInSection>
+
+      <FadeInSection>
+        <Footer />
+      </FadeInSection>
     </div>
   )
 }

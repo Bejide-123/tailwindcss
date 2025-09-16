@@ -1,7 +1,69 @@
 import React from "react";
 import { HiHome } from "react-icons/hi";
+import Swal from "sweetalert2";
 
 const Footer = () => {
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    
+    // Get the form data
+    const formData = new FormData(e.target);
+    const email = formData.get('email');
+    
+    // Validate email
+    if (!email || !email.includes('@')) {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        showClass: {
+          popup: "animate__animated animate__fadeInRight",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutRight",
+        },
+      });
+
+      Toast.fire({
+        icon: "error",
+        title: "Please enter a valid email address",
+        background: "#DC2626",
+        color: "#fff",
+      });
+      return;
+    }
+
+    // Create toast mixin
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      showClass: {
+        popup: "animate__animated animate__fadeInRight",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutRight",
+      },
+    });
+
+    // Simulate subscription process (you can replace this with actual API call)
+    setTimeout(() => {
+      Toast.fire({
+        icon: "success",
+        title: "Successfully subscribed! 🎉",
+        background: "#7C3AED",
+        color: "#fff",
+      });
+      
+      // Reset the form
+      e.target.reset();
+    }, 500);
+  };
+
   return (
     <div
       className="pt-10 px-4 md:px-20 lg:px-32 bg-gray-900 w-full overflow-hidden text-white"
@@ -81,9 +143,13 @@ const Footer = () => {
           <h3 className="text-lg font-bold mb-4">
             Subscribe to our Newsletter
           </h3>
-          <form className="flex flex-col sm:flex-row items-center gap-3">
+          <form 
+            className="flex flex-col sm:flex-row items-center gap-3"
+            onSubmit={handleSubscribe}
+          >
             <input
               type="email"
+              name="email"
               placeholder="Enter your email"
               className="w-full sm:flex-1 px-4 py-2 rounded-lg bg-white text-gray-900 placeholder-gray-500 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
