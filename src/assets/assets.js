@@ -81,7 +81,9 @@ export const properties = [
     propertyType: "Duplex",
     status: "For Sale",
     image: House14,
-    images: [House14, House15, House16, House17]
+    images: [House14, House15, House16, House17],
+    description:
+      "A stylish duplex offering spacious rooms, a private garden, and modern finishes. Perfect for a growing family looking to settle in a serene neighborhood."
   },
   {
     title: "Luxury 4-Bedroom Villa",
@@ -92,7 +94,9 @@ export const properties = [
     propertyType: "Villa",
     status: "For Sale",
     image: House1,
-    images: [House1, House2, House3, House4, House5, House6]
+    images: [House1, House2, House3, House4, House5, House6],
+    description:
+      "An exquisite villa with state-of-the-art interiors, a swimming pool, and panoramic ocean views. Designed for ultimate comfort and luxury living."
   },
   {
     title: "Cozy 2-Bedroom Apartment",
@@ -103,7 +107,9 @@ export const properties = [
     propertyType: "Apartment",
     status: "For Sale",
     image: House9,
-    images: [House9, House10, House11, House12, House13]
+    images: [House9, House10, House11, House12, House13],
+    description:
+      "A comfortable and well-finished apartment located in the heart of the city. Ideal for young professionals seeking convenience and style."
   },
   {
     title: "Contemporary Smart Home",
@@ -114,7 +120,9 @@ export const properties = [
     propertyType: "Smart Home",
     status: "For Sale",
     image: House26,
-    images: [House26, House27, House28, House29, House30]
+    images: [House26, House27, House28, House29, House30],
+    description:
+      "A cutting-edge smart home equipped with advanced automation systems, spacious interiors, and sleek contemporary design."
   },
   {
     title: "Seaside Penthouse Suite",
@@ -125,7 +133,9 @@ export const properties = [
     propertyType: "Penthouse",
     status: "For Sale",
     image: House31,
-    images: [House31, House22, House23, House24, House25]
+    images: [House31, House22, House23, House24, House25],
+    description:
+      "A lavish penthouse boasting breathtaking sea views, expansive terraces, and top-class amenities for a truly luxurious experience."
   },
   {
     title: "CityLine Flats",
@@ -136,7 +146,9 @@ export const properties = [
     propertyType: "Townhouse",
     status: "For Rent",
     image: House18,
-    images: [House18, House19, House20, House21]
+    images: [House18, House19, House20, House21],
+    description:
+      "A contemporary townhouse offering comfortable living spaces and easy access to schools, shopping, and public transport."
   }
 ];
 
